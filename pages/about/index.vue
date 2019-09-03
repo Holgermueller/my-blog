@@ -1,25 +1,31 @@
 <template>
-
-    <v-flex id="aboutPage">
-      <div class="text-center"></div>
-      <v-card class="header-card">
-        <v-card-title class="headline">This is the about page!</v-card-title>
-        <v-card-text>
-          <p>You made it</p>
-        </v-card-text>
-      </v-card>
-      <v-card class="content-card">
-        <v-card-text>About content will go here.</v-card-text>
-      </v-card>
-    </v-flex>
-
+  <div id="aboutPage">
+    <v-card class="page-header">
+      <v-card-title class="headline">About</v-card-title>
+      <v-card-text>
+        <p>You made it</p>
+      </v-card-text>
+    </v-card>
+    <v-card class="content-card">
+      <v-card-text>About content will go here.</v-card-text>
+    </v-card>
+  </div>
 </template>
 
 <style scoped>
-#aboutPage {
-  margin: 7rem auto;
+.page-header {
+  margin-top: 7rem;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.header-card {
-  margin-bottom: 1rem;
+.content-card {
+  width: 85%;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.headline {
+  justify-content: center;
 }
 </style>

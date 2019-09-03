@@ -11,6 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@mdi/font": "^4.2.95",
     "@nuxtjs/axios": "^5.6.0",
     "nuxt": "^2.0.0",
     "storyblok-nuxt": "^1.0.1"

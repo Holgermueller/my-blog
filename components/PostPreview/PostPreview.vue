@@ -1,15 +1,15 @@
 <template>
-  <v-card class="post-preview">
-    <v-card-text>
-      <nuxt-link :to="id">
-        <article >
+  <nuxt-link :to="id">
+    <v-card class="post-preview">
+      <v-card-text>
+        <article>
           <div class="headline">{{title}}</div>
           <hr />
           <div>{{previewText}}</div>
         </article>
-      </nuxt-link>
-    </v-card-text>
-  </v-card>
+      </v-card-text>
+    </v-card>
+  </nuxt-link>
 </template>
 
 <script>
@@ -36,8 +36,8 @@ a {
   text-decoration: none;
 }
 .post-preview {
-  width: 90%;
-  margin: 1rem;
+  width: 75%;
+  margin: 1rem auto;
   height: 10rem;
 }
 </style>

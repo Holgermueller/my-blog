@@ -28,6 +28,7 @@
   width: 100%;
   background-color: black;
   height: 4.5rem;
+  z-index: 1;
 }
 .main-nav {
   height: 100%;
