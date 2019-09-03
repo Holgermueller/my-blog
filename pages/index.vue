@@ -3,7 +3,12 @@
     <v-flex xs12 sm8 md6>
       <div class="text-center"></div>
       <v-card>
-        <v-card-title class="headline">Welcome to the Vuetify + Nuxt.js template</v-card-title>
+        <v-card-title class="headline">Holger Mueller</v-card-title>
+        <v-card-text>Writer Traveller Enthusiast</v-card-text>
+      </v-card>
+      <br />
+      <v-card>
+        <v-card-title class="headline">Newest post will go here</v-card-title>
       </v-card>
     </v-flex>
   </v-layout>
@@ -14,3 +19,9 @@ export default {
   components: {}
 };
 </script>
+
+<style scoped>
+.headline {
+  justify-content: center;
+}
+</style>
