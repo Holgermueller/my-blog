@@ -2,9 +2,7 @@
   <div id="aboutPage">
     <v-card class="page-header">
       <v-card-title class="headline">About</v-card-title>
-      <v-card-text>
-        <p>You made it</p>
-      </v-card-text>
+      <v-card-text></v-card-text>
     </v-card>
     <v-card class="content-card">
       <v-card-text>About content will go here.</v-card-text>

@@ -6,7 +6,7 @@
     </v-card>
     <br />
     <v-card class="content-card">
-      <v-card-title class="headline">Newest post will go here</v-card-title>
+      <v-card-title class="headline font-weight-bold">Newest post will go here</v-card-title>
       <v-card-text>content will go here...</v-card-text>
     </v-card>
   </div>

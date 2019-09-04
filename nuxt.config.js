@@ -1,3 +1,9 @@
+const dotenv = require("dotenv");
+
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config()
+}
+
 import colors from "vuetify/es5/util/colors";
 
 export default {
@@ -50,7 +56,12 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    ['storyblok-nuxt', {
+      accessToken: process.env.STORY_BLOK_TOKEN,
+      cacheProvider: 'memory'
+    }]
+  ],
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module

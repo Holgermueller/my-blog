@@ -3,7 +3,7 @@
     <v-card class="post-preview">
       <v-card-text>
         <article>
-          <div class="headline">{{title}}</div>
+          <div class="headline font-weight-bold">{{title}}</div>
           <hr />
           <div>{{previewText}}</div>
         </article>

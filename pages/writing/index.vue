@@ -21,32 +21,50 @@ export default {
   components: {
     PostPreview
   },
-  data() {
-    return {
-      posts: [
-        {
-          title: "First post",
-          previewText: "Line from post",
-          id: "first-post"
-        },
-        {
-          title: "Second post",
-          previewText: "Line from post",
-          id: "second-post"
-        },
-        {
-          title: "Third post",
-          previewText: "Some text",
-          id: "third-post"
-        },
-        {
-          title: "Fourth post",
-          previewText: "Even more text",
-          id: "fourth-post"
-        }
-      ]
-    };
+  asyncData(context) {
+    return context.app.$storyapi
+      .get("cdn/stories", {
+        version: "draft",
+        starts_with: "blog/"
+      })
+      .then(res => {
+        return {
+          posts: res.data.stories.map(post => {
+            return {
+              id: post.slug,
+              title: post.content.title,
+              previewText: post.content.preview_text
+            };
+          })
+        };
+      });
   }
+  // data() {
+  //   return {
+  //     posts: [
+  //       {
+  //         title: "First post",
+  //         previewText: "Line from post",
+  //         id: "first-post"
+  //       },
+  //       {
+  //         title: "Second post",
+  //         previewText: "Line from post",
+  //         id: "second-post"
+  //       },
+  //       {
+  //         title: "Third post",
+  //         previewText: "Some text",
+  //         id: "third-post"
+  //       },
+  //       {
+  //         title: "Fourth post",
+  //         previewText: "Even more text",
+  //         id: "fourth-post"
+  //       }
+  //     ]
+  //   };
+  // }
 };
 </script>
 
