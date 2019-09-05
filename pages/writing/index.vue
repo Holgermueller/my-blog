@@ -69,11 +69,7 @@ export default {
 </script>
 
 <style scoped>
-#writingIndexPage {
-  margin-bottom: 5rem;
-}
 .page-header {
-  margin-top: 7rem;
   width: 25%;
   margin-left: auto;
   margin-right: auto;

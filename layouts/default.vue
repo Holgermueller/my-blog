@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <TheHeader />
-    <nuxt />
+    <main class="main-content">
+      <nuxt />
+    </main>
     <TheFooter />
   </v-app>
 </template>
@@ -20,3 +22,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.main-content {
+  margin-top: 7rem;
+  margin-bottom: 5rem;
+}
+</style>

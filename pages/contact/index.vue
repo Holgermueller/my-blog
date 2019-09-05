@@ -30,7 +30,6 @@ export default {};
 
 <style scoped>
 .page-header {
-  margin-top: 7rem;
   width: 25%;
   margin-left: auto;
   margin-right: auto;

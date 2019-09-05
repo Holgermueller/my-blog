@@ -6,8 +6,14 @@
     </v-card>
     <br />
     <v-card class="content-card">
-      <v-card-title class="headline font-weight-bold">Newest post will go here</v-card-title>
-      <v-card-text>content will go here...</v-card-text>
+      <v-card-title class="headline">
+        <div class="display-1 font-weight-bold">{{title}}</div>
+      </v-card-title>
+      <v-card-text>
+        <div class="subtitle-1">{{location}}</div>
+        <div class="subtitle-1">{{date_time}}</div>
+        <p>{{content}}</p>
+      </v-card-text>
     </v-card>
   </div>
 </template>
@@ -15,15 +21,26 @@
 <script>
 export default {
   components: {},
-  data() {
-    return {};
+  asyncData(context) {
+    return context.app.$storyapi
+      .get("cdn/stories", {
+        version: "draft",
+        starts_with: "blog/"
+      })
+      .then(res => {
+        return {
+          title: res.data.stories[0].content.title,
+          content: res.data.stories[0].content.content,
+          location: res.data.stories[0].content.location,
+          date_time: res.data.stories[0].content.date_time
+        };
+      });
   }
 };
 </script>
 
 <style scoped>
 .page-header {
-  margin-top: 7rem;
   width: 25%;
   margin-left: auto;
   margin-right: auto;
@@ -39,5 +56,10 @@ export default {
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
+}
+.content-card p {
+  text-indent: 1rem;
+  white-space: pre;
+  margin-top: 1rem;
 }
 </style>
