@@ -8,5 +8,7 @@
 .footer {
   bottom: 0;
   margin-bottom: 0;
+  background-color: black;
+  color: white;
 }
 </style>

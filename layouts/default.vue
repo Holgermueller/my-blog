@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="body">
     <TheHeader />
     <main class="main-content">
       <nuxt />
@@ -24,6 +24,9 @@ export default {
 </script>
 
 <style scoped>
+.body {
+  background-color: #BFEFFF;
+}
 .main-content {
   margin-top: 7rem;
   margin-bottom: 5rem;

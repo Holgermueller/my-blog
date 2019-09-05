@@ -24,10 +24,11 @@ export default {
   asyncData(context) {
     return context.app.$storyapi
       .get("cdn/stories", {
-        version: "draft",
+        version: context.isDev ? "draft" : "published",
         starts_with: "blog/"
       })
       .then(res => {
+        console.log(res.data.stories[0]);
         return {
           title: res.data.stories[0].content.title,
           content: res.data.stories[0].content.content,
@@ -41,7 +42,7 @@ export default {
 
 <style scoped>
 .page-header {
-  width: 25%;
+  width: 65%;
   margin-left: auto;
   margin-right: auto;
 }
