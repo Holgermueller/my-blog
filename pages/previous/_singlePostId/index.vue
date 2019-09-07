@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { createClient } from "../../plugins/contentful";
+import { createClient } from "~/plugins/contentful";
 const contentfulClient = createClient();
 
 export default {
@@ -75,7 +75,7 @@ hr {
   margin-right: auto;
 }
 .post-content p {
-  white-space: pre;
+  white-space: pre-wrap;
 }
 .back {
   color: blue;

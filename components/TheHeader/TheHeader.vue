@@ -5,6 +5,7 @@
         <nuxt-link to="/" tag="li" class="page-link">
           <a>Home</a>
         </nuxt-link>
+
         <nuxt-link to="/previous" tag="li" class="page-link">
           <a>Previous</a>
         </nuxt-link>
@@ -12,6 +13,7 @@
         <nuxt-link to="/about" tag="li" class="page-link">
           <a>About</a>
         </nuxt-link>
+
         <nuxt-link to="/contact" tag="li" class="page-link">
           <a>Contact</a>
         </nuxt-link>

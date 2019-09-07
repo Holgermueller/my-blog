@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="id">
+  <nuxt-link :to="'/previous/' + id">
     <v-card class="post-preview">
       <v-card-text>
         <article>

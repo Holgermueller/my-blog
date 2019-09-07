@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import { createClient } from "../../plugins/contentful";
+import { createClient } from "~/plugins/contentful";
 const contentfulClient = createClient();
-import PostPreview from "../../components/PostPreview/PostPreview";
+import PostPreview from "~/components/PostPreview/PostPreview";
 
 export default {
   components: {

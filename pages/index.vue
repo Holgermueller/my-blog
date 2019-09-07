@@ -67,7 +67,7 @@ export default {
 }
 .content-card p {
   text-indent: 1rem;
-  white-space: pre;
+  white-space: pre-wrap;
   margin-top: 1rem;
 }
 </style>

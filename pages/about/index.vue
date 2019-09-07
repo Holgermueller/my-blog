@@ -5,8 +5,8 @@
       <v-card-text></v-card-text>
     </v-card>
     <v-card class="content-card">
-      <v-card-text>
-        <p>{{aboutBody}}</p>
+      <v-card-text class="content-container">
+        <p class="content">{{aboutBody}}</p>
       </v-card-text>
     </v-card>
   </div>
@@ -51,7 +51,6 @@ export default {
   justify-content: center;
 }
 #aboutPage p {
-  white-space: pre;
-  width: 100%;
+  white-space: pre-wrap;
 }
 </style>
