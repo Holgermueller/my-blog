@@ -1,4 +1,5 @@
 const dotenv = require("dotenv");
+const config = require("./.contentful.json");
 
 if (process.env.NODE_ENV !== "production") {
   dotenv.config()
@@ -62,6 +63,11 @@ export default {
       cacheProvider: 'memory'
     }]
   ],
+  env: {
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    CTF_ENVIRONMENT: config.CTF_ENVIRONMENT
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module

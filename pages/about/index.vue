@@ -1,31 +1,36 @@
 <template>
   <div id="aboutPage">
     <v-card class="page-header">
-      <v-card-title class="headline">{{title}}</v-card-title>
+      <v-card-title class="headline">{{header}}</v-card-title>
       <v-card-text></v-card-text>
     </v-card>
     <v-card class="content-card">
       <v-card-text>
-        <p>{{content}}</p>
+        <p>{{aboutBody}}</p>
       </v-card-text>
     </v-card>
   </div>
 </template>
 
 <script>
+import { createClient } from "../../plugins/contentful";
+const contentfulClient = createClient();
+
 export default {
-  asyncData(context) {
-    return context.app.$storyapi
-      .get("cdn/stories", {
-        version: context.isDev ? "draft" : "published",
-        starts_with: "about/"
+  asyncData({ data }) {
+    return Promise.all([
+      contentfulClient.getEntries({
+        content_type: "about",
+        order: "-sys.id"
       })
-      .then(res => {
+    ])
+      .then(([page]) => {
         return {
-          title: res.data.stories[0].content.Title,
-          content: res.data.stories[0].content.Content
+          header: page.items[0].fields.aboutHeader,
+          aboutBody: page.items[0].fields.aboutBody
         };
-      });
+      })
+      .catch(console.error);
   }
 };
 </script>
@@ -47,5 +52,6 @@ export default {
 }
 #aboutPage p {
   white-space: pre;
+  width: 100%;
 }
 </style>

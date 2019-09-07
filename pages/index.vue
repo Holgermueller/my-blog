@@ -11,31 +11,38 @@
       </v-card-title>
       <v-card-text>
         <div class="subtitle-1">{{location}}</div>
-        <div class="subtitle-1">{{date_time}}</div>
-        <p>{{content}}</p>
+        <div class="subtitle-1">{{dateTime}}</div>
+        <p>{{blogbody}}</p>
       </v-card-text>
+      <hr />
+      <v-card-actions>{{tags}}</v-card-actions>
     </v-card>
   </div>
 </template>
 
 <script>
+import { createClient } from "../plugins/contentful";
+const contentfulClient = createClient();
+
 export default {
   components: {},
-  asyncData(context) {
-    return context.app.$storyapi
-      .get("cdn/stories", {
-        version: context.isDev ? "draft" : "published",
-        starts_with: "blog/"
+  asyncData({ data }) {
+    return Promise.all([
+      contentfulClient.getEntries({
+        content_type: "blogPost",
+        order: "-sys.id"
       })
-      .then(res => {
-        console.log(res.data.stories[0]);
+    ])
+      .then(([pages]) => {
         return {
-          title: res.data.stories[0].content.title,
-          content: res.data.stories[0].content.content,
-          location: res.data.stories[0].content.location,
-          date_time: res.data.stories[0].content.date_time
+          title: pages.items[0].fields.title,
+          blogbody: pages.items[0].fields.blogbody,
+          dateTime: pages.items[0].fields.dateTime,
+          tags: pages.items[0].fields.tags,
+          location: pages.items[0].fields.location
         };
-      });
+      })
+      .catch(console.error);
   }
 };
 </script>
