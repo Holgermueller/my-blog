@@ -1,11 +1,5 @@
-const dotenv = require("dotenv");
-const config = require("./.contentful.json");
-
-if (process.env.NODE_ENV !== "production") {
-  dotenv.config()
-}
-
 import colors from "vuetify/es5/util/colors";
+const config = require("./.contentful.json");
 
 export default {
   mode: "universal",
@@ -57,12 +51,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    ['storyblok-nuxt', {
-      accessToken: process.env.STORY_BLOK_TOKEN,
-      cacheProvider: 'memory'
-    }]
-  ],
+  modules: [],
   env: {
     CTF_SPACE_ID: config.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,

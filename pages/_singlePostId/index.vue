@@ -7,7 +7,7 @@
         <ul class="subheader">
           <li>{{author}}</li>
           <li>{{location}}</li>
-          <li>{{date_time}}</li>
+          <li>{{dateTime}}</li>
         </ul>
       </v-card-text>
     </v-card>
@@ -15,10 +15,12 @@
     <v-card class="post-content">
       <v-card-text>
         <p>{{content}}</p>
-        <div>{{tags}}</div>
       </v-card-text>
+      <hr />
       <v-card-actions>
         <nuxt-link class="back" to="/previous">
+          <v-btn text>{{tags}}</v-btn>
+          <span></span>
           <v-btn text>BACK</v-btn>
         </nuxt-link>
       </v-card-actions>
@@ -27,30 +29,25 @@
 </template>
 
 <script>
+import { createClient } from "../../plugins/contentful";
+const contentfulClient = createClient();
+
 export default {
-  asyncData(context) {
-    return context.app.$storyapi
-      .get("cdn/stories/blog/" + context.params.singlePostId, {
-        version: "draft"
-      })
-      .then(res => {
-        console.log(res.data);
+  asyncData({ data, params }) {
+    console.log(params);
+    return Promise.all([contentfulClient.getEntry(params.singlePostId)])
+      .then(([page]) => {
         return {
-          title: res.data.story.content.title,
-          content: res.data.story.content.content,
-          location: res.data.story.content.location,
-          date_time: res.data.story.content.date_time,
-          tags: res.data.story.content.tags,
-          author: res.data.story.content.author
+          title: page.fields.title,
+          location: page.fields.location,
+          dateTime: page.fields.dateTime,
+          tags: page.fields.tags,
+          content: page.fields.blogbody,
+          author: page.fields.author
         };
-      });
+      })
+      .catch(console.error);
   }
-  // mounted() {
-  //   this.$storyblok.init();
-  //   this.$storyblok.on("change", () => {
-  //     location.reload(true);
-  //   });
-  // },
 };
 </script>
 

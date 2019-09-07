@@ -16,55 +16,36 @@
 </template>
 
 <script>
+import { createClient } from "../../plugins/contentful";
+const contentfulClient = createClient();
 import PostPreview from "../../components/PostPreview/PostPreview";
+
 export default {
   components: {
     PostPreview
   },
-  asyncData(context) {
-    return context.app.$storyapi
-      .get("cdn/stories", {
-        version: "draft",
-        starts_with: "blog/"
+  asyncData({ data }) {
+    return Promise.all([
+      contentfulClient.getEntries({
+        content_type: "blogPost",
+        order: "-sys.createdAt"
       })
-      .then(res => {
+    ])
+      .then(([pages]) => {
         return {
-          posts: res.data.stories.map(post => {
+          posts: pages.items.map(post => {
             return {
-              id: post.slug,
-              title: post.content.title,
-              previewText: post.content.preview_text
-            };
+              id: post.sys.id,
+              title: post.fields.title,
+              previewText: post.fields.subtitle
+            }
           })
-        };
+        }
+      })
+      .catch(err => {
+        console.log(err);
       });
   }
-  // data() {
-  //   return {
-  //     posts: [
-  //       {
-  //         title: "First post",
-  //         previewText: "Line from post",
-  //         id: "first-post"
-  //       },
-  //       {
-  //         title: "Second post",
-  //         previewText: "Line from post",
-  //         id: "second-post"
-  //       },
-  //       {
-  //         title: "Third post",
-  //         previewText: "Some text",
-  //         id: "third-post"
-  //       },
-  //       {
-  //         title: "Fourth post",
-  //         previewText: "Even more text",
-  //         id: "fourth-post"
-  //       }
-  //     ]
-  //   };
-  // }
 };
 </script>
 

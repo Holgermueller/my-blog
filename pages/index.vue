@@ -30,7 +30,7 @@ export default {
     return Promise.all([
       contentfulClient.getEntries({
         content_type: "blogPost",
-        order: "-sys.id"
+        order: "-sys.createdAt"
       })
     ])
       .then(([pages]) => {
