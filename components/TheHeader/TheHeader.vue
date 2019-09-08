@@ -1,60 +1,65 @@
 <template>
   <header class="main-header">
-    <nav class="main-nav">
-      <ul class="nav-links">
+    <v-app-bar-nav-icon class="nav-icon" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+    <v-navigation-drawer v-model="drawer" floating temporary>
+      <v-list-item>
         <nuxt-link to="/" tag="li" class="page-link">
           <a>Home</a>
         </nuxt-link>
+      </v-list-item>
 
+      <v-list-item>
         <nuxt-link to="/previous" tag="li" class="page-link">
-          <a>Previous</a>
+          <a>Previous Posts</a>
         </nuxt-link>
+      </v-list-item>
 
+      <v-list-item>
         <nuxt-link to="/about" tag="li" class="page-link">
           <a>About</a>
         </nuxt-link>
+      </v-list-item>
 
+      <v-list-item>
         <nuxt-link to="/contact" tag="li" class="page-link">
           <a>Contact</a>
         </nuxt-link>
-      </ul>
-    </nav>
+      </v-list-item>
+    </v-navigation-drawer>
   </header>
 </template>
 
+<script>
+export default {
+  data: () => ({
+    drawer: false
+  }),
+  watch: {
+    group() {
+      this.drawer = false;
+    }
+  }
+};
+</script>
+
 <style scoped>
 .main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: black;
-  height: 4.5rem;
   z-index: 1;
 }
-.main-nav {
-  height: 100%;
-}
-.nav-links {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+.nav-icon {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  border: 2px solid white;
+  color: white;
 }
 .page-link a {
   text-decoration: none;
   display: block;
-  color: white;
 }
 .page-link {
   height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   list-style: none;
-  margin: 0 1rem;
   padding: 0.3rem;
 }
 .page-link a:hover,

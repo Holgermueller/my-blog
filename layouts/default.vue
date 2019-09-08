@@ -28,7 +28,6 @@ export default {
   background-color: #BFEFFF;
 }
 .main-content {
-  margin-top: 7rem;
   margin-bottom: 5rem;
 }
 </style>
