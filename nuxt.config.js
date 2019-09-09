@@ -29,6 +29,11 @@ export default {
         rel: "stylesheet",
         href:
           "https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css"
+      },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap"
       }
     ]
   },

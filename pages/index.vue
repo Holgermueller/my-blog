@@ -1,13 +1,13 @@
 <template>
   <div id="indexPage">
     <v-card class="page-header">
-      <v-card-title class="headline">Holger Mueller</v-card-title>
+      <v-card-title class="display-2 font-weight-bold name">Holger Mueller</v-card-title>
       <v-card-text class="subtitle-1">Writer Traveller Enthusiast</v-card-text>
     </v-card>
     <br />
     <v-card class="content-card">
       <v-card-title class="headline">
-        <div class="display-1 font-weight-bold">{{title}}</div>
+        <div class>{{title}}</div>
       </v-card-title>
       <v-card-text>
         <div class="subtitle-1">{{location}}</div>
@@ -53,6 +53,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
+.name,
 .headline {
   justify-content: center;
 }
@@ -66,8 +67,12 @@ export default {
   margin-right: auto;
 }
 .content-card p {
-  text-indent: 1rem;
   white-space: pre-wrap;
   margin-top: 1rem;
+}
+hr {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

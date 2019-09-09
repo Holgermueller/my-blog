@@ -1,32 +1,32 @@
 <template>
-  <header class="main-header">
-    <v-app-bar-nav-icon class="nav-icon" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-    <v-navigation-drawer v-model="drawer" floating temporary>
-      <v-list-item>
+  <div class="main-nav-container">
+    <v-app-bar-nav-icon class="nav-icon" @click.stop="drawer = !drawer" fixed></v-app-bar-nav-icon>
+    <v-navigation-drawer v-model="drawer" class="drawer" hide-overlay floating fixed temporary>
+      <v-list-item class="nav-list-item">
         <nuxt-link to="/" tag="li" class="page-link">
           <a>Home</a>
         </nuxt-link>
       </v-list-item>
 
-      <v-list-item>
+      <v-list-item class="nav-list-item">
         <nuxt-link to="/previous" tag="li" class="page-link">
           <a>Previous Posts</a>
         </nuxt-link>
       </v-list-item>
 
-      <v-list-item>
+      <v-list-item class="nav-list-item">
         <nuxt-link to="/about" tag="li" class="page-link">
           <a>About</a>
         </nuxt-link>
       </v-list-item>
 
-      <v-list-item>
+      <v-list-item class="nav-list-item">
         <nuxt-link to="/contact" tag="li" class="page-link">
           <a>Contact</a>
         </nuxt-link>
       </v-list-item>
     </v-navigation-drawer>
-  </header>
+  </div>
 </template>
 
 <script>
@@ -43,18 +43,29 @@ export default {
 </script>
 
 <style scoped>
-.main-header {
+.main-nav-container {
   z-index: 1;
+}
+.drawer {
+  z-index: 2;
+  background-color: #3366FF;
+}
+.nav-list-item:first-child {
+  margin-top: 5rem;
 }
 .nav-icon {
   margin-top: 1rem;
   margin-left: 1rem;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+.nav-list-item {
+  padding-top: 1rem;
 }
 .page-link a {
   text-decoration: none;
   display: block;
+  color: #000000;
 }
 .page-link {
   height: 100%;
@@ -65,9 +76,9 @@ export default {
 .page-link a:hover,
 .page-link a:active,
 .page-link.nuxt-link-exact-active a {
-  color: #06c4d1;
+  color: #ffffff;
 }
 .page-link.nuxt-link-exact-active {
-  border-bottom: 3px solid #06c4d1;
+  border-bottom: 3px solid #ffffff;
 }
 </style>

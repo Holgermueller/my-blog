@@ -1,14 +1,15 @@
 <template>
-    <v-footer class="footer" absolute>
-      <span>&copy; 2019 Holger Mueller</span>
-    </v-footer>
+  <v-footer class="footer" absolute>
+    <span class="footer-info">&copy; 2019 Holger Mueller</span>
+  </v-footer>
 </template>
 
 <style scoped>
 .footer {
-  bottom: 0;
-  margin-bottom: 0;
-  background-color: black;
-  color: white;
+  z-index: 0;
+}
+.footer-info {
+  margin: auto;
+  padding: 4px;
 }
 </style>

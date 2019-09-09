@@ -24,10 +24,14 @@ export default {
 </script>
 
 <style scoped>
-.body {
-  background-color: #BFEFFF;
+body {
+  font-family: "PT Sans Narrow", sans-serif;
 }
 .main-content {
+  margin-top: 5rem;
   margin-bottom: 5rem;
+}
+a:hover {
+  cursor: pointer;
 }
 </style>
