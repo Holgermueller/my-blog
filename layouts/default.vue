@@ -1,6 +1,6 @@
 <template>
   <v-app class="body">
-    <TheHeader />
+    <TheNav />
     <main class="main-content">
       <nuxt />
     </main>
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import TheHeader from "../components/TheHeader/TheHeader";
+import TheNav from "../components/TheNav/TheNav";
 import TheFooter from "../components/TheFooter/TheFooter";
 
 export default {
   components: {
-    TheHeader,
+    TheNav,
     TheFooter
   },
   data() {
@@ -30,8 +30,5 @@ body {
 .main-content {
   margin-top: 5rem;
   margin-bottom: 5rem;
-}
-a:hover {
-  cursor: pointer;
 }
 </style>

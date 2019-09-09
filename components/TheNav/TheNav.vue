@@ -4,7 +4,10 @@
     <v-navigation-drawer v-model="drawer" class="drawer" hide-overlay floating fixed temporary>
       <v-list-item class="nav-list-item">
         <nuxt-link to="/" tag="li" class="page-link">
-          <a>Home</a>
+          <a>
+            <span class="mdi mdi-home"></span>
+            Home
+          </a>
         </nuxt-link>
       </v-list-item>
 
@@ -16,14 +19,27 @@
 
       <v-list-item class="nav-list-item">
         <nuxt-link to="/about" tag="li" class="page-link">
-          <a>About</a>
+          <a>
+            <span class="mdi mdi-account-circle"></span>
+            About
+          </a>
         </nuxt-link>
       </v-list-item>
 
       <v-list-item class="nav-list-item">
         <nuxt-link to="/contact" tag="li" class="page-link">
-          <a>Contact</a>
+          <a>
+            <span class="mdi mdi-laptop"></span>
+            Contact
+          </a>
         </nuxt-link>
+      </v-list-item>
+
+      <v-list-item class="nav-list-item">
+        <div class="close" text>
+          <span class="mdi mdi-close"></span>
+          Close
+        </div>
       </v-list-item>
     </v-navigation-drawer>
   </div>
@@ -48,7 +64,7 @@ export default {
 }
 .drawer {
   z-index: 2;
-  background-color: #3366FF;
+  background-color: #3366ff;
 }
 .nav-list-item:first-child {
   margin-top: 5rem;
@@ -56,8 +72,6 @@ export default {
 .nav-icon {
   margin-top: 1rem;
   margin-left: 1rem;
-  border: 2px solid #ffffff;
-  color: #ffffff;
 }
 .nav-list-item {
   padding-top: 1rem;
@@ -66,17 +80,26 @@ export default {
   text-decoration: none;
   display: block;
   color: #000000;
+  font-family: "Pt Sans Narrow", sans-serif;
+  font-size: 2rem;
 }
+.close {
+  font-family: "Pt Sans Narrow", sans-serif;
+  font-size: 2rem;
+}
+.close,
 .page-link {
   height: 100%;
   display: flex;
   list-style: none;
   padding: 0.3rem;
 }
+.close:hover,
 .page-link a:hover,
 .page-link a:active,
 .page-link.nuxt-link-exact-active a {
   color: #ffffff;
+  cursor: pointer;
 }
 .page-link.nuxt-link-exact-active {
   border-bottom: 3px solid #ffffff;
