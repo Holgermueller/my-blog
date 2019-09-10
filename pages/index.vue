@@ -6,12 +6,11 @@
     </v-card>
     <br />
     <v-card class="content-card">
-      <v-card-title class="headline">
-        <div class="display-1">{{title}}</div>
-      </v-card-title>
+      <v-card-title class="home-page-title">{{title}}</v-card-title>
       <v-card-text>
         <div class="subtitle-1">{{location}}</div>
         <div class="subtitle-1">{{dateTime}}</div>
+        <hr />
         <p>{{blogbody}}</p>
       </v-card-text>
       <hr />
@@ -49,11 +48,17 @@ export default {
 
 <style scoped>
 .page-header {
-  width: 65%;
+  width: fit-content;
   margin-left: auto;
   margin-right: auto;
 }
-.name{
+.name {
+  justify-content: center;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 3rem;
+  margin: 1rem;
+}
+.home-page-title {
   justify-content: center;
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 3rem;
@@ -71,7 +76,7 @@ export default {
 .content-card p {
   white-space: pre-wrap;
   margin-top: 1rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 hr {
   width: 85%;

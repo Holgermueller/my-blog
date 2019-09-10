@@ -4,31 +4,42 @@
       <v-card-title class="page-title">Contact</v-card-title>
     </v-card>
 
+    <Disclaimer />
+
     <a href="https://twitter.com/thatHMMueller">
-      <v-card class="contact-card">
-        <v-card-title class="headline">
-          <span class="mdi mdi-twitter"></span>Twitter
-        </v-card-title>
-      </v-card>
+      <v-hover v-slot:default="{ hover }">
+        <v-card class="contact-card" :elevation="hover ? 12 : 2">
+          <v-card-title class="headline">
+            <span class="mdi mdi-twitter"></span>Twitter
+          </v-card-title>
+        </v-card>
+      </v-hover>
     </a>
 
     <a href="https://www.instagram.com/holgerj9/">
-      <v-card class="contact-card">
-        <v-card-title class="headline">
-          <span class="mdi mdi-instagram"></span>Instagram
-        </v-card-title>
-      </v-card>
+      <v-hover v-slot:default="{ hover }">
+        <v-card class="contact-card" :elevation="hover ? 12 : 2">
+          <v-card-title class="headline">
+            <span class="mdi mdi-instagram"></span>Instagram
+          </v-card-title>
+        </v-card>
+      </v-hover>
     </a>
   </div>
 </template>
 
 <script>
-export default {};
+import Disclaimer from "../../components/Disclaimer/disclaimer";
+export default {
+  components: {
+    Disclaimer
+  }
+};
 </script>
 
 <style scoped>
 .page-header {
-  width: 45%;
+  width: fit-content;
   margin-left: auto;
   margin-right: auto;
 }
@@ -44,5 +55,6 @@ export default {};
 }
 a {
   text-decoration: none;
+  width: fit-content;
 }
 </style>

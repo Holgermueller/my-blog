@@ -53,7 +53,7 @@ export default {
 
 <style scoped>
 .page-header {
-  width: 65%;
+  width: fit-content;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;

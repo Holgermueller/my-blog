@@ -1,14 +1,16 @@
 <template>
   <nuxt-link :to="'/previous/' + id">
-    <v-card class="post-preview">
-      <v-card-text>
-        <article>
-          <div class="preview-title">{{title}}</div>
-          <hr />
-          <div class="preview-text">{{previewText}}</div>
-        </article>
-      </v-card-text>
-    </v-card>
+    <v-hover v-slot:default="{ hover }">
+      <v-card class="post-preview" :elevation="hover ? 12 : 2">
+        <v-card-text>
+          <article>
+            <div class="preview-title">{{title}}</div>
+            <hr />
+            <div class="preview-text">{{previewText}}</div>
+          </article>
+        </v-card-text>
+      </v-card>
+    </v-hover>
   </nuxt-link>
 </template>
 
@@ -44,7 +46,7 @@ a {
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .preview-text {
   margin-top: 1rem;
