@@ -24,12 +24,16 @@ export default {
 </script>
 
 <style scoped>
+.body {
+  background-color: #fbeec1;
+}
 .main-content {
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
 .footer {
   z-index: 0;
+  background-color: inherit;
 }
 .footer-info {
   margin: auto;

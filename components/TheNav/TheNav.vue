@@ -72,7 +72,7 @@ export default {
 }
 .drawer {
   z-index: 2;
-  background-color: #3366ff;
+  background-color: #659dbd;
 }
 .nav-list-item:first-child {
   margin-top: 5rem;

@@ -1,7 +1,7 @@
 <template>
   <div id="post">
     <v-card class="post-header">
-      <v-card-title class="headline">{{title}}</v-card-title>
+      <v-card-title class="post-headline">{{title}}</v-card-title>
       <hr />
       <v-card-text>
         <ul class="subheader">
@@ -57,8 +57,11 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
-.headline {
+.post-headline {
   justify-content: center;
+  font-family: "Pt Sans Narrow", sans-serif;
+  font-size: 2rem;
+  margin: 1rem;
 }
 hr {
   width: 75%;
