@@ -1,8 +1,7 @@
 <template>
   <div id="aboutPage">
     <v-card class="page-header">
-      <v-card-title class="headline">{{header}}</v-card-title>
-      <v-card-text></v-card-text>
+      <v-card-title class="page-title">{{header}}</v-card-title>
     </v-card>
     <v-card class="content-card">
       <v-card-text class="content-container">
@@ -37,9 +36,15 @@ export default {
 
 <style scoped>
 .page-header {
-  width: 65%;
+  width: 45%;
   margin-left: auto;
   margin-right: auto;
+}
+.page-title {
+  margin: 1rem;
+  justify-content: center;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 3rem;
 }
 .content-card {
   width: 85%;
@@ -52,5 +57,8 @@ export default {
 }
 #aboutPage p {
   white-space: pre-wrap;
+}
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 </style>

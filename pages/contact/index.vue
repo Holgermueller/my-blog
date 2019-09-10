@@ -1,7 +1,7 @@
 <template>
   <div id="contactPage">
     <v-card class="page-header">
-      <v-card-title class="headline page-headline">Contact</v-card-title>
+      <v-card-title class="page-title">Contact</v-card-title>
     </v-card>
 
     <a href="https://twitter.com/thatHMMueller">
@@ -9,7 +9,6 @@
         <v-card-title class="headline">
           <span class="mdi mdi-twitter"></span>Twitter
         </v-card-title>
-        <v-card-text class></v-card-text>
       </v-card>
     </a>
 
@@ -18,7 +17,6 @@
         <v-card-title class="headline">
           <span class="mdi mdi-instagram"></span>Instagram
         </v-card-title>
-        <v-card-text class></v-card-text>
       </v-card>
     </a>
   </div>
@@ -34,8 +32,11 @@ export default {};
   margin-left: auto;
   margin-right: auto;
 }
-.page-headline {
+.page-title {
+  margin: 1rem;
   justify-content: center;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 3rem;
 }
 .contact-card {
   width: 55%;

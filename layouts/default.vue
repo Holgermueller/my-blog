@@ -4,18 +4,18 @@
     <main class="main-content">
       <nuxt />
     </main>
-    <TheFooter />
+    <v-footer class="footer" absolute>
+      <span class="footer-info">&copy; 2019 Holger Mueller</span>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
 import TheNav from "../components/TheNav/TheNav";
-import TheFooter from "../components/TheFooter/TheFooter";
 
 export default {
   components: {
-    TheNav,
-    TheFooter
+    TheNav
   },
   data() {
     return {};
@@ -24,11 +24,15 @@ export default {
 </script>
 
 <style scoped>
-body {
-  font-family: "PT Sans Narrow", sans-serif;
-}
 .main-content {
   margin-top: 5rem;
   margin-bottom: 5rem;
+}
+.footer {
+  z-index: 0;
+}
+.footer-info {
+  margin: auto;
+  padding: 4px;
 }
 </style>

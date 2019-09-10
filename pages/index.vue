@@ -1,7 +1,7 @@
 <template>
   <div id="indexPage">
     <v-card class="page-header">
-      <v-card-title class="display-2 name">Holger Mueller</v-card-title>
+      <v-card-title class="name">Holger Mueller</v-card-title>
       <v-card-text class="subtitle-1">Writer Traveller Enthusiast</v-card-text>
     </v-card>
     <br />
@@ -53,10 +53,11 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
-.name,
-.headline {
+.name{
   justify-content: center;
-    font-family: "PT Sans Narrow", sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 3rem;
+  margin: 1rem;
 }
 .subtitle-1 {
   text-align: center;
@@ -70,6 +71,7 @@ export default {
 .content-card p {
   white-space: pre-wrap;
   margin-top: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 hr {
   width: 85%;

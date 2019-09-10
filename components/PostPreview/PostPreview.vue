@@ -3,9 +3,9 @@
     <v-card class="post-preview">
       <v-card-text>
         <article>
-          <div class="headline font-weight-bold">{{title}}</div>
+          <div class="preview-title">{{title}}</div>
           <hr />
-          <div>{{previewText}}</div>
+          <div class="preview-text">{{previewText}}</div>
         </article>
       </v-card-text>
     </v-card>
@@ -39,5 +39,15 @@ a {
   width: 75%;
   margin: 1rem auto;
   height: 10rem;
+}
+.preview-title {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+.preview-text {
+  margin-top: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 </style>

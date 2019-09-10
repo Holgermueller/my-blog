@@ -13,7 +13,9 @@
 
       <v-list-item class="nav-list-item">
         <nuxt-link to="/previous" tag="li" class="page-link">
-          <a>Previous Posts</a>
+          <a>
+            <span class="mdi mdi-pencil-outline"></span>
+            Previous Posts</a>
         </nuxt-link>
       </v-list-item>
 

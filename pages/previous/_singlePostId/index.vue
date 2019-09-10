@@ -76,6 +76,7 @@ hr {
 }
 .post-content p {
   white-space: pre-wrap;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 .back {
   color: blue;

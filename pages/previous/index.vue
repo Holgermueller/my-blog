@@ -2,7 +2,9 @@
   <div id="previousWritingIndexPage">
     <v-card class="page-header">
       <v-card-title class="page-title">Previous Posts</v-card-title>
-      <v-card-text>Check out my previous posts below:</v-card-text>
+      <v-card-text class="subtitle-container">
+        <div class="page-subtitle">Check out my previous posts below:</div>
+      </v-card-text>
     </v-card>
 
     <PostPreview
@@ -54,11 +56,19 @@ export default {
   width: 65%;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
+  justify-content: center;
+  color: #000000;
 }
 .page-title {
   font-family: "PT Sans Narrow", sans-serif;
-  text-align: center;
+  justify-content: center;
   font-size: 2rem;
+  margin: 0.5rem;
+}
+.page-subtitle {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 1.25rem;
+  color: #000000;
+  text-align: center;
 }
 </style>
