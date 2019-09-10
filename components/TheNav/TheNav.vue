@@ -15,7 +15,8 @@
         <nuxt-link to="/previous" tag="li" class="page-link">
           <a>
             <span class="mdi mdi-pencil-outline"></span>
-            Previous Posts</a>
+            Previous Posts
+          </a>
         </nuxt-link>
       </v-list-item>
 
@@ -38,7 +39,7 @@
       </v-list-item>
 
       <v-list-item class="nav-list-item">
-        <div class="close" text>
+        <div class="close" @click="closeNav" text>
           <span class="mdi mdi-close"></span>
           Close
         </div>
@@ -54,6 +55,11 @@ export default {
   }),
   watch: {
     group() {
+      this.drawer = false;
+    }
+  },
+  methods: {
+    closeNav() {
       this.drawer = false;
     }
   }
