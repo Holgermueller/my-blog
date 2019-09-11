@@ -34,7 +34,6 @@ const contentfulClient = createClient();
 
 export default {
   asyncData({ data, params }) {
-    console.log(params);
     return Promise.all([contentfulClient.getEntry(params.singlePostId)])
       .then(([page]) => {
         return {
@@ -79,7 +78,7 @@ hr {
 }
 .post-content p {
   white-space: pre-wrap;
-  font-family: Verdana, Geneva, Tahoma, sans-serif
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .back {
   color: blue;

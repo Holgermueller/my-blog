@@ -1,7 +1,15 @@
 <template>
   <div class="main-nav-container">
     <v-app-bar-nav-icon class="nav-icon" @click.stop="drawer = !drawer" fixed></v-app-bar-nav-icon>
-    <v-navigation-drawer v-model="drawer" class="drawer" width="100%" hide-overlay floating fixed temporary>
+    <v-navigation-drawer
+      v-model="drawer"
+      class="drawer"
+      width="100%"
+      hide-overlay
+      floating
+      fixed
+      temporary
+    >
       <v-list-item class="nav-list-item">
         <nuxt-link to="/" tag="li" class="page-link">
           <a>
