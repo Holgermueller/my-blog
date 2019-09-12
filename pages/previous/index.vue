@@ -13,6 +13,7 @@
       :title="post.title"
       :id="post.id"
       :previewText="post.previewText"
+      :previewDate="post.previewDate"
     />
   </div>
 </template>
@@ -39,7 +40,8 @@ export default {
             return {
               id: post.sys.id,
               title: post.fields.title,
-              previewText: post.fields.subtitle
+              previewText: post.fields.subtitle,
+              previewDate: post.fields.dateTime
             };
           })
         };

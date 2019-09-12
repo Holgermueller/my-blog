@@ -7,6 +7,7 @@
             <article>
               <div class="preview-title">{{title}}</div>
               <hr />
+              <div class="preview-date">Originally posted: {{previewDate}}</div>
               <div class="preview-text">{{previewText}}</div>
             </article>
           </v-card-text>
@@ -28,6 +29,10 @@ export default {
       required: true
     },
     id: {
+      type: String,
+      required: true
+    },
+    previewDate: {
       type: String,
       required: true
     }
