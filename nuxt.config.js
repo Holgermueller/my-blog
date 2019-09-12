@@ -1,5 +1,5 @@
 import colors from "vuetify/es5/util/colors";
-//const config = require("./.contentful.json");
+const config = require("./contentful.json");
 
 export default {
   mode: "universal",
