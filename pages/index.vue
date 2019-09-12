@@ -9,7 +9,7 @@
       <v-card-title class="home-page-title">{{title}}</v-card-title>
       <v-card-text>
         <div class="subtitle-1">{{location}}</div>
-        <div class="subtitle-1">{{dateTime}}</div>
+        <div class="subtitle-1">{{dateTime | changeDateFilter}}</div>
         <div class="subtitle-1">Listening to: {{listeningTo}}</div>
         <hr />
         <p>{{blogbody}}</p>
@@ -21,8 +21,10 @@
 </template>
 
 <script>
+const moment = require("moment");
 import { createClient } from "../plugins/contentful";
 const contentfulClient = createClient();
+
 
 export default {
   components: {},
@@ -44,6 +46,11 @@ export default {
         };
       })
       .catch(console.error);
+  },
+  filters: {
+    changeDateFilter: (value) => {
+      return moment(value).format("dddd, Do MMMM YYYY, LT")
+    }
   }
 };
 </script>

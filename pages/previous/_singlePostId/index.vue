@@ -7,7 +7,7 @@
         <ul class="subheader">
           <li>{{author}}</li>
           <li>{{location}}</li>
-          <li>{{dateTime}}</li>
+          <li>{{dateTime | changeDateFilter}}</li>
           <li>Listening to: {{listeningTo}}</li>
         </ul>
       </v-card-text>
@@ -30,6 +30,7 @@
 </template>
 
 <script>
+const moment = require("moment");
 import { createClient } from "~/plugins/contentful";
 const contentfulClient = createClient();
 
@@ -48,6 +49,11 @@ export default {
         };
       })
       .catch(console.error);
+  },
+  filters: {
+    changeDateFilter: value => {
+      return moment(value).format("dddd, Do MMMM YYYY, LT");
+    }
   }
 };
 </script>

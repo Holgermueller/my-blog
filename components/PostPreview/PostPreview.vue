@@ -7,7 +7,7 @@
             <article>
               <div class="preview-title">{{title}}</div>
               <hr />
-              <div class="preview-date">Originally posted: {{previewDate}}</div>
+              <div class="preview-date">Originally posted: {{previewDate | changeDateFilter}}</div>
               <div class="preview-text">{{previewText}}</div>
             </article>
           </v-card-text>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+const moment = require("moment");
 export default {
   props: {
     title: {
@@ -35,6 +36,11 @@ export default {
     previewDate: {
       type: String,
       required: true
+    }
+  },
+  filters: {
+    changeDateFilter: (value) => {
+      return moment(value).format("dddd, Do MMMM YYYY, LT");
     }
   }
 };
