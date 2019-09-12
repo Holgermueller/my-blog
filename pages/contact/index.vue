@@ -11,7 +11,7 @@
         <a href="https://twitter.com/thatHMMueller">
           <v-card-title class="headline">
             <span class="mdi mdi-twitter"></span>
-Twitter
+            Twitter
           </v-card-title>
         </a>
       </v-card>
@@ -22,7 +22,7 @@ Twitter
         <a href="https://www.instagram.com/holgerj9/">
           <v-card-title class="headline">
             <span class="mdi mdi-instagram"></span>
-Instagram
+            Instagram
           </v-card-title>
         </a>
       </v-card>
@@ -59,5 +59,8 @@ a {
   text-decoration: none;
   width: fit-content;
   color: #000;
+}
+a:hover {
+  color: blue;
 }
 </style>

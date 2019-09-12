@@ -39,7 +39,7 @@ export default {
     }
   },
   filters: {
-    changeDateFilter: (value) => {
+    changeDateFilter: value => {
       return moment(value).format("dddd, Do MMMM YYYY, LT");
     }
   }
@@ -53,6 +53,7 @@ a {
 }
 a:hover {
   cursor: pointer;
+  color: blue;
 }
 .post-preview {
   width: 75%;
