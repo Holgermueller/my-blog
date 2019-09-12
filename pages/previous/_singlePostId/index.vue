@@ -8,6 +8,7 @@
           <li>{{author}}</li>
           <li>{{location}}</li>
           <li>{{dateTime}}</li>
+          <li>Listening to: {{listeningTo}}</li>
         </ul>
       </v-card-text>
     </v-card>
@@ -18,10 +19,10 @@
       </v-card-text>
       <hr />
       <v-card-actions>
-        <nuxt-link class="back" to="/previous">
+        <nuxt-link to="/previous">
           <v-btn text>{{tags}}</v-btn>
           <span></span>
-          <v-btn text>BACK</v-btn>
+          <v-btn class="back" text>BACK</v-btn>
         </nuxt-link>
       </v-card-actions>
     </v-card>
@@ -42,7 +43,8 @@ export default {
           dateTime: page.fields.dateTime,
           tags: page.fields.tags,
           content: page.fields.blogbody,
-          author: page.fields.author
+          author: page.fields.author,
+          listeningTo: page.fields.listeningTo
         };
       })
       .catch(console.error);
@@ -79,9 +81,15 @@ hr {
 .post-content p {
   white-space: pre-wrap;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #000;
+}
+a {
+  text-decoration: none;
 }
 .back {
-  color: blue;
   text-decoration: none;
+}
+.back:hover {
+  color: blue;
 }
 </style>

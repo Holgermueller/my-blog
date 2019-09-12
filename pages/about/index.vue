@@ -60,5 +60,6 @@ export default {
 }
 p {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #000;
 }
 </style>

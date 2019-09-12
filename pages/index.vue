@@ -10,11 +10,12 @@
       <v-card-text>
         <div class="subtitle-1">{{location}}</div>
         <div class="subtitle-1">{{dateTime}}</div>
+        <div class="subtitle-1">Listening to: {{listeningTo}}</div>
         <hr />
         <p>{{blogbody}}</p>
       </v-card-text>
-      <hr />
-      <v-card-actions>{{tags}}</v-card-actions>
+      <!-- <hr />
+      <v-card-actions>{{tags}}</v-card-actions>-->
     </v-card>
   </div>
 </template>
@@ -38,7 +39,8 @@ export default {
           blogbody: pages.items[0].fields.blogbody,
           dateTime: pages.items[0].fields.dateTime,
           tags: pages.items[0].fields.tags,
-          location: pages.items[0].fields.location
+          location: pages.items[0].fields.location,
+          listeningTo: pages.items[0].fields.listeningTo
         };
       })
       .catch(console.error);
@@ -77,6 +79,7 @@ export default {
   white-space: pre-wrap;
   margin-top: 1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #000;
 }
 hr {
   width: 85%;
