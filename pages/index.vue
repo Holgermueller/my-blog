@@ -22,7 +22,7 @@
 
 <script>
 const moment = require("moment");
-import { createClient } from "../plugins/contentful";
+import { createClient } from "~/plugins/contentful";
 const contentfulClient = createClient();
 
 
