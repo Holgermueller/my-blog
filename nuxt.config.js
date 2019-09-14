@@ -2,7 +2,7 @@ import colors from "vuetify/es5/util/colors";
 const config = require("./plugins/contentful");
 
 export default {
-  mode: "universal",
+  //mode: "universal",
   /*
    ** Headers of the page
    */
