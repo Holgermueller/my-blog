@@ -20,7 +20,7 @@
       </v-list-item>
 
       <v-list-item class="nav-list-item">
-        <nuxt-link to="/previous" tag="li" class="page-link">
+        <nuxt-link to="/previous/previous" tag="li" class="page-link">
           <a>
             <span class="mdi mdi-pencil-outline"></span>
             Previous Posts
@@ -29,7 +29,7 @@
       </v-list-item>
 
       <v-list-item class="nav-list-item">
-        <nuxt-link to="/about" tag="li" class="page-link">
+        <nuxt-link to="/about/about" tag="li" class="page-link">
           <a>
             <span class="mdi mdi-account-circle"></span>
             About
@@ -38,7 +38,7 @@
       </v-list-item>
 
       <v-list-item class="nav-list-item">
-        <nuxt-link to="/contact" tag="li" class="page-link">
+        <nuxt-link to="/contact/contact" tag="li" class="page-link">
           <a>
             <span class="mdi mdi-laptop"></span>
             Contact

@@ -1,8 +1,8 @@
 import colors from "vuetify/es5/util/colors";
-const config = require("./plugins/contentful");
+const config = require("./.contentful.json");
 
 export default {
-  //mode: "universal",
+  mode: "spa",
   /*
    ** Headers of the page
    */
