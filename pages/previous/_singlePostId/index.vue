@@ -19,9 +19,9 @@
       </v-card-text>
       <hr />
       <v-card-actions>
-        <nuxt-link to="/previous">
-          <v-btn text>{{tags}}</v-btn>
-          <span></span>
+        <nuxt-link to="/previous/previous">
+          <!-- <v-btn text>{{tags}}</v-btn>
+          <span></span> -->
           <v-btn class="back" text>BACK</v-btn>
         </nuxt-link>
       </v-card-actions>
