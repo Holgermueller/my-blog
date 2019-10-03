@@ -80,7 +80,8 @@ export default {
 }
 .drawer {
   z-index: 2;
-  background-color: #659DBD;
+  /* background-color: #659DBD; */
+  background-color: #555555;
 }
 .nav-list-item:first-child {
   margin-top: 5rem;
