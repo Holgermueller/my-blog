@@ -3,7 +3,7 @@
     <v-app-bar-nav-icon class="nav-icon" @click.stop="drawer = !drawer" fixed></v-app-bar-nav-icon>
     <v-navigation-drawer
       v-model="drawer"
-      class="drawer"
+      class="drawer color-for-background"
       width="100%"
       hide-overlay
       floating
@@ -81,7 +81,9 @@ export default {
 .drawer {
   z-index: 2;
   /* background-color: #659DBD; */
-  background-color: #555555;
+}
+.color-for-background {
+background-color: #555555;
 }
 .nav-list-item:first-child {
   margin-top: 5rem;
