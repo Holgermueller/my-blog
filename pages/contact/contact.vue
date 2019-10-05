@@ -61,6 +61,6 @@ a {
   color: #000;
 }
 a:hover {
-  color: blue;
+  color: #659dbd;
 }
 </style>

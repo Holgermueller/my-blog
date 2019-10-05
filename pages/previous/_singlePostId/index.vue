@@ -91,11 +91,12 @@ hr {
 }
 a {
   text-decoration: none;
+  color: #000;
 }
 .back {
   text-decoration: none;
 }
 .back:hover {
-  color: blue;
+  color: #659dbd;
 }
 </style>

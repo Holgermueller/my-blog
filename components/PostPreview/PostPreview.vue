@@ -53,7 +53,7 @@ a {
 }
 a:hover {
   cursor: pointer;
-  color: blue;
+  color: #659dbd;
 }
 .post-preview {
   width: 75%;
