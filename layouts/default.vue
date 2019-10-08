@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 .body {
-  background-color: #fbeec1 !important;
+  background-color: #fbeec1;
 }
 .main-content {
   margin-top: 5rem;
@@ -33,7 +33,7 @@ export default {
 }
 .footer {
   z-index: 0;
-  background-color: inherit;
+  background-color: inherit !important;
 }
 .footer-info {
   margin: auto;
