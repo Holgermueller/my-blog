@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 .body {
-  background-color: #fbeec1;
+  background-color: #fbeec1 !important;
 }
 .main-content {
   margin-top: 5rem;
