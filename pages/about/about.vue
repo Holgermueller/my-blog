@@ -1,36 +1,19 @@
 <template>
   <div id="aboutPage">
     <v-card class="page-header">
-      <v-card-title class="page-title">{{header}}</v-card-title>
+      <v-card-title class="page-title">{{ header }}</v-card-title>
     </v-card>
     <v-card class="content-card">
       <v-card-text class="content-container">
-        <p class="content">{{aboutBody}}</p>
+        <p class="content">{{ aboutBody }}</p>
       </v-card-text>
     </v-card>
   </div>
 </template>
 
 <script>
-import { createClient } from "../../plugins/contentful";
-const contentfulClient = createClient();
-
 export default {
-  asyncData({ data }) {
-    return Promise.all([
-      contentfulClient.getEntries({
-        content_type: "about",
-        order: "-sys.id"
-      })
-    ])
-      .then(([page]) => {
-        return {
-          header: page.items[0].fields.aboutHeader,
-          aboutBody: page.items[0].fields.aboutBody
-        };
-      })
-      .catch(console.error);
-  }
+  asyncData({ data }) {},
 };
 </script>
 

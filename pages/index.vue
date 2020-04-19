@@ -6,13 +6,13 @@
     </v-card>
     <br />
     <v-card class="content-card">
-      <v-card-title class="home-page-title">{{title}}</v-card-title>
+      <v-card-title class="home-page-title">{{ title }}</v-card-title>
       <v-card-text>
-        <div class="subtitle-1">{{location}}</div>
-        <div class="subtitle-1">{{dateTime | changeDateFilter}}</div>
-        <div class="subtitle-1">Listening to: {{listeningTo}}</div>
+        <div class="subtitle-1">{{ location }}</div>
+        <div class="subtitle-1">{{ dateTime | changeDateFilter }}</div>
+        <div class="subtitle-1">Listening to: {{ listeningTo }}</div>
         <hr />
-        <p>{{blogbody}}</p>
+        <p>{{ blogbody }}</p>
       </v-card-text>
       <!-- <hr />
       <v-card-actions>{{tags}}</v-card-actions>-->
@@ -22,36 +22,15 @@
 
 <script>
 const moment = require("moment");
-import { createClient } from "~/plugins/contentful";
-const contentfulClient = createClient();
-
 
 export default {
   components: {},
-  asyncData({ data }) {
-    return Promise.all([
-      contentfulClient.getEntries({
-        content_type: "blogPost",
-        order: "-sys.createdAt"
-      })
-    ])
-      .then(([pages]) => {
-        return {
-          title: pages.items[0].fields.title,
-          blogbody: pages.items[0].fields.blogbody,
-          dateTime: pages.items[0].fields.dateTime,
-          tags: pages.items[0].fields.tags,
-          location: pages.items[0].fields.location,
-          listeningTo: pages.items[0].fields.listeningTo
-        };
-      })
-      .catch(console.error);
-  },
+  asyncData({}) {},
   filters: {
     changeDateFilter: (value) => {
-      return moment(value).format("dddd, Do MMMM YYYY, LT")
-    }
-  }
+      return moment(value).format("dddd, Do MMMM YYYY, LT");
+    },
+  },
 };
 </script>
 

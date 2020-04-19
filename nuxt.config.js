@@ -1,5 +1,4 @@
 import colors from "vuetify/es5/util/colors";
-const config = require("./.contentful.json");
 
 export default {
   mode: "spa",
@@ -15,27 +14,27 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
-      }
+        content: process.env.npm_package_description || "",
+      },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+          "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900",
       },
       {
         rel: "stylesheet",
         href:
-          "https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css"
+          "https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css",
       },
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap"
-      }
-    ]
+          "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap",
+      },
+    ],
   },
   /*
    ** Customize the progress-bar color
@@ -48,7 +47,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ["~/plugins/firebase.js"],
   /*
    ** Nuxt.js dev-modules
    */
@@ -57,11 +56,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [],
-  env: {
-    CTF_SPACE_ID: config.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
-    CTF_ENVIRONMENT: config.CTF_ENVIRONMENT
-  },
+
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
@@ -69,7 +64,7 @@ export default {
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
     theme: {
-      dark: false,
+      dark: true,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -78,10 +73,10 @@ export default {
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
-    }
+          success: colors.green.accent3,
+        },
+      },
+    },
   },
   /*
    ** Build configuration
@@ -90,18 +85,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
-      if (ctx.dev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: "pre",
-          test: /\.(js|vue)$/,
-          loader: "eslint-loader",
-          exclude: /(node_modules)/
-        });
-      }
-    }
+    extend(config, ctx) {},
   },
-  generate: {
-    fallback: true
-  }
 };

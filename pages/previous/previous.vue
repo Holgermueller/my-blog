@@ -19,35 +19,13 @@
 </template>
 
 <script>
-import { createClient } from "~/plugins/contentful";
-const contentfulClient = createClient();
 import PostPreview from "~/components/PostPreview/PostPreview";
 
 export default {
   components: {
-    PostPreview
+    PostPreview,
   },
-  asyncData({ data }) {
-    return Promise.all([
-      contentfulClient.getEntries({
-        content_type: "blogPost",
-        order: "-sys.createdAt"
-      })
-    ])
-      .then(([pages]) => {
-        return {
-          posts: pages.items.map(post => {
-            return {
-              id: post.sys.id,
-              title: post.fields.title,
-              previewText: post.fields.subtitle,
-              previewDate: post.fields.dateTime
-            };
-          })
-        };
-      })
-      .catch(console.error);
-  }
+  asyncData({}) {},
 };
 </script>
 
