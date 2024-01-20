@@ -16,7 +16,7 @@
     "@nuxtjs/moment": "^1.6.0",
     "dotenv": "^8.2.0",
     "firebase": "^9.10.0",
-    "nuxt": "^3.4.3"
+    "nuxt": "^3.9.3"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.12.3"
